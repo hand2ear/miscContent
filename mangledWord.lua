@@ -36,7 +36,7 @@ end
 vowels = stringToTableOfChars("aeiouy")
 consonants = stringToTableOfChars("bcdfghjklmnpqrstvwxz")
 -----------------------------------------------
-commonEndings = { "es","ed","er","ar","ous"," ing","ation","tion","s" }
+commonEndings = { "es","ed","er","ar","ous","ing","ation","tion","s" }
 prefixes = { "qu","con","quo","ex","un"," in","re","de","be","mono","poly" }
 -----------------------------------------------
 function createRandomString(formatStr)
@@ -53,6 +53,9 @@ function createRandomString(formatStr)
 
  		if ch == "c" then
 			result = result .. randomTableChoice(consonants)
+			if result == "q" then
+        			return "qu"
+        		end
 		end
 
  		if ch == "v" then
